@@ -1,5 +1,8 @@
 # dactyl_manuform
 
+picking a layout.  
+things I would have done different
+
 3d printed case
 
 https://ryanis.cool/dactyl/#manuform
