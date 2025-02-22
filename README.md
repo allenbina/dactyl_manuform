@@ -1,9 +1,9 @@
 # dactyl_manuform
 
-This was my first large 3d printed project, handwired keyboard, ergo keyboard.  I had some experience in 3d printing small things, soldering, firmware and python.  
+This was my first large 3d printed project, handwired keyboard, ergo keyboard.  I had some experience in 3d printing small things, soldering, firmware and python.
 
 things I already had:
-ender 3 
+3d printer.  ender 3 
 I got it from microcenter for $100 a couple years ago and used it here and there.  Recently I was learning fusion 360 because tinkercad was not cutting it for anything serious.  
 soldering irons
 lots of soldering accessories.
@@ -16,7 +16,7 @@ things I would have done different
 
 3d printed case
 
-https://ryanis.cool/dactyl/#manuform
+https://ryanis.cool/cosmos/
 
 ordered parts from ali express
 
