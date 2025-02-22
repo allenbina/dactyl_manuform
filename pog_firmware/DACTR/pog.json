@@ -1,0 +1,354 @@
+{
+    "id": "01JMFJYECREQEC61F00JXNAXHB",
+    "name": "DACTR",
+    "manufacturer": "",
+    "description": "",
+    "tags": [],
+    "controller": "pi-pico",
+    "keyboardType": "splitSerial",
+    "wiringMethod": "matrix",
+    "diodeDirection": "ROW2COL",
+    "rows": 6,
+    "cols": 6,
+    "pins": 0,
+    "rowPins": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+    ],
+    "colPins": [
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13"
+    ],
+    "directPins": [],
+    "encoders": [],
+    "layouts": [],
+    "keys": [
+        {
+            "x": 0,
+            "y": 0,
+            "idx": 0
+        },
+        {
+            "x": 1,
+            "y": 0,
+            "idx": 1
+        },
+        {
+            "x": 2,
+            "y": 0,
+            "idx": 2
+        },
+        {
+            "x": 3,
+            "y": 0,
+            "idx": 3
+        },
+        {
+            "x": 4,
+            "y": 0,
+            "idx": 4
+        },
+        {
+            "x": 5,
+            "y": 0,
+            "idx": 5
+        },
+        {
+            "x": 0,
+            "y": 1,
+            "idx": 6
+        },
+        {
+            "x": 1,
+            "y": 1,
+            "idx": 7
+        },
+        {
+            "x": 2,
+            "y": 1,
+            "idx": 8
+        },
+        {
+            "x": 3,
+            "y": 1,
+            "idx": 9
+        },
+        {
+            "x": 4,
+            "y": 1,
+            "idx": 10
+        },
+        {
+            "x": 5,
+            "y": 1,
+            "idx": 11
+        },
+        {
+            "x": 0,
+            "y": 2,
+            "idx": 12
+        },
+        {
+            "x": 1,
+            "y": 2,
+            "idx": 13
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "idx": 14
+        },
+        {
+            "x": 3,
+            "y": 2,
+            "idx": 15
+        },
+        {
+            "x": 4,
+            "y": 2,
+            "idx": 16
+        },
+        {
+            "x": 5,
+            "y": 2,
+            "idx": 17
+        },
+        {
+            "x": 0,
+            "y": 3,
+            "idx": 18
+        },
+        {
+            "x": 1,
+            "y": 3,
+            "idx": 19
+        },
+        {
+            "x": 2,
+            "y": 3,
+            "idx": 20
+        },
+        {
+            "x": 3,
+            "y": 3,
+            "idx": 21
+        },
+        {
+            "x": 4,
+            "y": 3,
+            "idx": 22
+        },
+        {
+            "x": 5,
+            "y": 3,
+            "idx": 23
+        },
+        {
+            "x": 2,
+            "y": 4,
+            "idx": 24
+        },
+        {
+            "x": 3,
+            "y": 4,
+            "idx": 25
+        },
+        {
+            "x": -1.25,
+            "y": 4.25,
+            "idx": 26
+        },
+        {
+            "x": -0.25,
+            "y": 4.25,
+            "idx": 27
+        },
+        {
+            "x": 0.75,
+            "y": 4.25,
+            "idx": 28
+        },
+        {
+            "x": -1.25,
+            "y": 5.25,
+            "idx": 29
+        },
+        {
+            "x": -0.25,
+            "y": 5.25,
+            "idx": 30
+        }
+    ],
+    "keymap": [
+        [
+            "KC.N6",
+            "KC.N7",
+            "KC.N8",
+            "KC.N9",
+            "KC.N0",
+            "KC.MINS",
+            "KC.Y",
+            "KC.U",
+            "KC.I",
+            "KC.O",
+            "KC.P",
+            "KC.GRV",
+            "KC.H",
+            "KC.J",
+            "KC.K",
+            "KC.L",
+            "KC.SCLN",
+            "KC.PGUP",
+            "KC.N",
+            "KC.M",
+            "KC.COMM",
+            "KC.DOT",
+            "KC.SLSH",
+            "KC.PGDOWN",
+            "KC.LEFT",
+            "KC.RIGHT",
+            "KC.ENT",
+            "KC.SPC",
+            "KC.BSPC",
+            "KC.HOME",
+            "KC.END",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS"
+        ]
+    ],
+    "encoderKeymap": [
+        []
+    ],
+    "layers": [
+        {
+            "name": ""
+        }
+    ],
+    "split": true,
+    "splitPinA": "17",
+    "splitPinB": "16",
+    "splitSide": "right",
+    "vbusPin": "VBUS_SENSE",
+    "splitUsePio": true,
+    "splitFlip": false,
+    "spitUartFlip": false,
+    "coordMap": [
+        [
+            "034",
+            "028",
+            "022",
+            "016",
+            "010",
+            "004"
+        ],
+        [
+            "033",
+            "027",
+            "021",
+            "015",
+            "009",
+            "003"
+        ],
+        [
+            "032",
+            "026",
+            "020",
+            "014",
+            "008",
+            "002"
+        ],
+        [
+            "031",
+            "025",
+            "019",
+            "013",
+            "007",
+            "001"
+        ],
+        [
+            "023",
+            "017"
+        ],
+        [
+            "018",
+            "030",
+            "029"
+        ],
+        [
+            "024",
+            "012"
+        ]
+    ],
+    "pinPrefix": "gp",
+    "coordMapSetup": false,
+    "rgbPin": "",
+    "rgbNumLeds": 0,
+    "rgbOptions": {
+        "animationMode": 0,
+        "hueDefault": 0,
+        "satDefault": 255,
+        "valDefault": 255,
+        "animationSpeed": 1,
+        "breatheCenter": 1,
+        "knightEffectLength": 3
+    },
+    "kbFeatures": [
+        "basic",
+        "serial",
+        "oneshot",
+        "tapdance",
+        "holdtap",
+        "mousekeys",
+        "combos",
+        "macros"
+    ],
+    "flashingMode": "automatic",
+    "lastEdited": "2025-02-19 12:43"
+}
