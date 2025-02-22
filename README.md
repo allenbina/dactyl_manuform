@@ -9,6 +9,7 @@ soldering irons
 lots of soldering accessories.
 wick, flux, wire, solder, alcohol, etc. 
 
+octprint
 
 picking a layout.  
 things I would have done different
