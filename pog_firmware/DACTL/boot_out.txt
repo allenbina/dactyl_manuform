@@ -1,0 +1,4 @@
+Adafruit CircuitPython 9.2.4 on 2025-01-29; VCC-GND Studio YD RP2040 with rp2040
+Board ID:vcc_gnd_yd_rp2040
+UID:3535B79717544E53
+boot.py output:

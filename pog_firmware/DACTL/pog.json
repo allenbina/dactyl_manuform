@@ -1,0 +1,631 @@
+{
+    "id": "01JMFGVNHQEZW8GTKHNEJ8MRZE",
+    "name": "DACTL",
+    "manufacturer": "",
+    "description": "",
+    "tags": [],
+    "controller": "pi-pico",
+    "keyboardType": "splitSerial",
+    "wiringMethod": "matrix",
+    "diodeDirection": "ROW2COL",
+    "rows": 6,
+    "cols": 6,
+    "pins": 0,
+    "rowPins": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+    ],
+    "colPins": [
+        "8",
+        "9",
+        "10",
+        "12",
+        "13",
+        "14"
+    ],
+    "directPins": [],
+    "encoders": [],
+    "layouts": [],
+    "keys": [
+        {
+            "x": 0,
+            "y": 0,
+            "idx": 0
+        },
+        {
+            "x": 1,
+            "y": 0,
+            "idx": 1
+        },
+        {
+            "x": 2,
+            "y": 0,
+            "idx": 2
+        },
+        {
+            "x": 3,
+            "y": 0,
+            "idx": 3
+        },
+        {
+            "x": 4,
+            "y": 0,
+            "idx": 4
+        },
+        {
+            "x": 5,
+            "y": 0,
+            "idx": 5
+        },
+        {
+            "x": 0,
+            "y": 1,
+            "idx": 6
+        },
+        {
+            "x": 1,
+            "y": 1,
+            "idx": 7
+        },
+        {
+            "x": 2,
+            "y": 1,
+            "idx": 8
+        },
+        {
+            "x": 3,
+            "y": 1,
+            "idx": 9
+        },
+        {
+            "x": 4,
+            "y": 1,
+            "idx": 10
+        },
+        {
+            "x": 5,
+            "y": 1,
+            "idx": 11
+        },
+        {
+            "x": 0,
+            "y": 2,
+            "idx": 12
+        },
+        {
+            "x": 1,
+            "y": 2,
+            "idx": 13
+        },
+        {
+            "x": 2,
+            "y": 2,
+            "idx": 14
+        },
+        {
+            "x": 3,
+            "y": 2,
+            "idx": 15
+        },
+        {
+            "x": 4,
+            "y": 2,
+            "idx": 16
+        },
+        {
+            "x": 5,
+            "y": 2,
+            "idx": 17
+        },
+        {
+            "x": 0,
+            "y": 3,
+            "idx": 18
+        },
+        {
+            "x": 1,
+            "y": 3,
+            "idx": 19
+        },
+        {
+            "x": 2,
+            "y": 3,
+            "idx": 20
+        },
+        {
+            "x": 3,
+            "y": 3,
+            "idx": 21
+        },
+        {
+            "x": 4,
+            "y": 3,
+            "idx": 22
+        },
+        {
+            "x": 5,
+            "y": 3,
+            "idx": 23
+        },
+        {
+            "x": 0.75,
+            "y": 4.25,
+            "idx": 24
+        },
+        {
+            "x": 1.75,
+            "y": 4.25,
+            "idx": 25
+        },
+        {
+            "x": 3,
+            "y": 4.25,
+            "idx": 26
+        },
+        {
+            "x": 4,
+            "y": 4.25,
+            "idx": 27
+        },
+        {
+            "x": 5,
+            "y": 4.25,
+            "idx": 28
+        },
+        {
+            "x": 4,
+            "y": 5.25,
+            "idx": 29
+        },
+        {
+            "x": 5,
+            "y": 5.25,
+            "idx": 30
+        },
+        {
+            "x": 6.5,
+            "y": 0,
+            "idx": 31
+        },
+        {
+            "x": 7.5,
+            "y": 0,
+            "idx": 32
+        },
+        {
+            "x": 8.5,
+            "y": 0,
+            "idx": 33
+        },
+        {
+            "x": 9.5,
+            "y": 0,
+            "idx": 34
+        },
+        {
+            "x": 10.5,
+            "y": 0,
+            "idx": 35
+        },
+        {
+            "x": 11.5,
+            "y": 0,
+            "idx": 36
+        },
+        {
+            "x": 6.5,
+            "y": 1,
+            "idx": 37
+        },
+        {
+            "x": 7.5,
+            "y": 1,
+            "idx": 38
+        },
+        {
+            "x": 8.5,
+            "y": 1,
+            "idx": 39
+        },
+        {
+            "x": 9.5,
+            "y": 1,
+            "idx": 40
+        },
+        {
+            "x": 10.5,
+            "y": 1,
+            "idx": 41
+        },
+        {
+            "x": 11.5,
+            "y": 1,
+            "idx": 42
+        },
+        {
+            "x": 6.5,
+            "y": 2,
+            "idx": 43
+        },
+        {
+            "x": 7.5,
+            "y": 2,
+            "idx": 44
+        },
+        {
+            "x": 8.5,
+            "y": 2,
+            "idx": 45
+        },
+        {
+            "x": 9.5,
+            "y": 2,
+            "idx": 46
+        },
+        {
+            "x": 10.5,
+            "y": 2,
+            "idx": 47
+        },
+        {
+            "x": 11.5,
+            "y": 2,
+            "idx": 48
+        },
+        {
+            "x": 6.5,
+            "y": 3,
+            "idx": 49
+        },
+        {
+            "x": 7.5,
+            "y": 3,
+            "idx": 50
+        },
+        {
+            "x": 8.5,
+            "y": 3,
+            "idx": 51
+        },
+        {
+            "x": 9.5,
+            "y": 3,
+            "idx": 52
+        },
+        {
+            "x": 10.5,
+            "y": 3,
+            "idx": 53
+        },
+        {
+            "x": 11.5,
+            "y": 3,
+            "idx": 54
+        },
+        {
+            "x": 9.75,
+            "y": 4.25,
+            "idx": 55
+        },
+        {
+            "x": 10.75,
+            "y": 4.25,
+            "idx": 56
+        },
+        {
+            "x": 6.5,
+            "y": 4.25,
+            "idx": 57
+        },
+        {
+            "x": 7.5,
+            "y": 4.25,
+            "idx": 58
+        },
+        {
+            "x": 8.5,
+            "y": 4.25,
+            "idx": 59
+        },
+        {
+            "x": 6.5,
+            "y": 5.25,
+            "idx": 60
+        },
+        {
+            "x": 7.5,
+            "y": 5.25,
+            "idx": 61
+        }
+    ],
+    "keymap": [
+        [
+            "KC.ESC",
+            "KC.N1",
+            "KC.N2",
+            "KC.N3",
+            "KC.N4",
+            "KC.N5",
+            "KC.TAB",
+            "KC.Q",
+            "KC.W",
+            "KC.E",
+            "KC.R",
+            "KC.T",
+            "KC.LALT",
+            "KC.A",
+            "KC.S",
+            "KC.D",
+            "KC.F",
+            "KC.G",
+            "KC.LSFT",
+            "KC.Z",
+            "KC.X",
+            "KC.C",
+            "KC.V",
+            "KC.B",
+            "KC.LBRC",
+            "KC.RBRC",
+            "KC.LCTL",
+            "KC.SPC",
+            "KC.BSPC",
+            "KC.LCTL",
+            "KC.LSFT",
+            "KC.N6",
+            "KC.N7",
+            "KC.N8",
+            "KC.N9",
+            "KC.N0",
+            "KC.MINS",
+            "KC.Y",
+            "KC.U",
+            "KC.I",
+            "KC.O",
+            "KC.P",
+            "KC.GRV",
+            "KC.H",
+            "KC.J",
+            "KC.K",
+            "KC.L",
+            "KC.SCLN",
+            "KC.PGUP",
+            "KC.N",
+            "KC.M",
+            "KC.COMM",
+            "KC.DOT",
+            "KC.SLSH",
+            "KC.PGDOWN",
+            "KC.LEFT",
+            "KC.RIGHT",
+            "KC.ENT",
+            "KC.SPC",
+            "KC.BSPC",
+            "KC.HOME",
+            "KC.END",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS"
+        ],
+        [
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS",
+            "KC.TRNS"
+        ]
+    ],
+    "encoderKeymap": [
+        []
+    ],
+    "layers": [
+        {
+            "name": ""
+        },
+        {
+            "name": ""
+        }
+    ],
+    "split": true,
+    "splitPinA": "16",
+    "splitPinB": "17",
+    "splitSide": "left",
+    "vbusPin": "VBUS_SENSE",
+    "splitUsePio": true,
+    "splitFlip": false,
+    "spitUartFlip": false,
+    "coordMap": [
+        [
+            "000",
+            "006",
+            "012",
+            "018",
+            "024",
+            "030"
+        ],
+        [
+            "001",
+            "007",
+            "013",
+            "019",
+            "025",
+            "031"
+        ],
+        [
+            "002",
+            "008",
+            "014",
+            "020",
+            "026",
+            "032"
+        ],
+        [
+            "003",
+            "009",
+            "015",
+            "021",
+            "027",
+            "033"
+        ],
+        [
+            "016",
+            "022"
+        ],
+        [
+            "028",
+            "035",
+            "029"
+        ],
+        [
+            "017",
+            "023"
+        ],
+        [
+            "070",
+            "064",
+            "058",
+            "052",
+            "046",
+            "040"
+        ],
+        [
+            "069",
+            "063",
+            "057",
+            "051",
+            "045",
+            "039"
+        ],
+        [
+            "068",
+            "062",
+            "056",
+            "050",
+            "044",
+            "038"
+        ],
+        [
+            "067",
+            "061",
+            "055",
+            "049",
+            "043",
+            "037"
+        ],
+        [
+            "059",
+            "053"
+        ],
+        [
+            "054",
+            "066",
+            "065"
+        ],
+        [
+            "060",
+            "048"
+        ]
+    ],
+    "pinPrefix": "gp",
+    "coordMapSetup": false,
+    "rgbPin": "",
+    "rgbNumLeds": 0,
+    "rgbOptions": {
+        "animationMode": 0,
+        "hueDefault": 0,
+        "satDefault": 255,
+        "valDefault": 255,
+        "animationSpeed": 1,
+        "breatheCenter": 1,
+        "knightEffectLength": 3
+    },
+    "kbFeatures": [
+        "basic",
+        "serial",
+        "oneshot",
+        "tapdance",
+        "holdtap",
+        "mousekeys",
+        "combos",
+        "macros"
+    ],
+    "flashingMode": "automatic",
+    "lastEdited": "2025-02-21 10:47"
+}
