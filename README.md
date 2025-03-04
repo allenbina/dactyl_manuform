@@ -13,6 +13,8 @@ wick, flux, wire, solder, alcohol, etc.
 wire strippers
 
 
+!([relative%20path/to/img.jpg](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_3504.JPEG)
+
 # octprint
 
 picking a layout.  
