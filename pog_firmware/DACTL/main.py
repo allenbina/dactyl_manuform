@@ -8,6 +8,7 @@ from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
 from kmk.modules.split import Split, SplitType, SplitSide
 from kmk.modules.layers import Layers
+from kmk.modules.holdtap import HoldTap
 # from kb import data_pin
 # from kmk.extensions.RGB import RGB, AnimationModes
 

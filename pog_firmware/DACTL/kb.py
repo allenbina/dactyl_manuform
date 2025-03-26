@@ -106,7 +106,6 @@ class POGKeyboard(KMKKeyboard):
         # Add your own modules and extensions here
         # or sort them into the correct spot to have the correct import order
 
-
         # Encoders
         if pog.hasEncoders:
             from kmk.modules.encoder import EncoderHandler

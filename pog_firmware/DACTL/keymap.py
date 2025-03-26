@@ -18,3 +18,4 @@ for l, layer in enumerate(pog.config['encoderKeymap']):
     for e, encoder in enumerate(layer):
         layerEncoders.append(tuple(map(eval, encoder)))
     encoderKeymap.append(tuple(layerEncoders))
+

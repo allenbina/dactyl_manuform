@@ -1,6 +1,7 @@
 # Main Keyboard Configuration - v1.0.0
 import board
 import pog
+
 # check if we just want to run the coord_mappping Assistant
 if pog.coordMappingAssistant:
     from coordmaphelper import CoordMapKeyboard
@@ -28,3 +29,5 @@ else:
     # Execute the keyboard loop
     if __name__ == '__main__':
         keyboard.go()
+
+
