@@ -14,3 +14,6 @@
 
 // Number of layers exposed to Vial
 #define DYNAMIC_KEYMAP_LAYER_COUNT 2
+
+// Handedness stored in EEPROM — set once per half with qmk flash -bl uf2-split-left/right
+#define EE_HANDS

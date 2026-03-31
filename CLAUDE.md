@@ -9,22 +9,55 @@
 - **Right half (DACTR)** row pins: GP2–GP7, col pins: GP8, GP9, GP10, GP11, GP12, GP13
 
 ## Current firmware
-- Located in `pog_firmware/DACTL/` and `pog_firmware/DACTR/`
-- Uses **KMK** (CircuitPython) configured via **POG** (pog.json)
-- Each half runs independently; left half stores the combined keymap
+- **Vial QMK** — compiled and ready to flash
+- Flash file: `dactyl_manuform_custom_vial.uf2` (repo root)
+- Keyboard source: `vial_qmk_firmware/keyboards/dactyl_manuform_custom/`
+- Old KMK firmware (no longer active): `pog_firmware/DACTL/` and `pog_firmware/DACTR/`
 
-## Goal
-Convert to **Vial QMK** so the keymap can be edited live via the Vial app.
-- Target: `keyboards/dactyl_manuform_custom/` inside a local Vial QMK repo
-- Key layout will be reprogrammed in Vial after flashing — no need to port the existing keymap exactly
-- Flash via UF2 drag-and-drop (hold BOOTSEL on RP2040, drag .uf2 to the drive)
+## Vial QMK build notes
+- Serial driver must be set to `vendor` (RP2040 PIO) in `keyboard.json` — bitbang does not work
+- `EE_HANDS` is defined in `keymaps/vial/config.h` — do NOT use `split.handedness.method` in `keyboard.json` (not valid in this QMK schema)
+- Build machine requires `libnewlib-arm-none-eabi` for ARM C stdlib headers
+- vial-qmk repo cloned to `/home/mediafront/git/vial-qmk`
+
+## Rebuilding firmware
+```bash
+export PATH="$PATH:/root/.local/bin"
+export QMK_HOME=/home/mediafront/git/vial-qmk
+cd /home/mediafront/git/vial-qmk
+qmk compile -kb dactyl_manuform_custom -km vial
+cp .build/dactyl_manuform_custom_vial.uf2 ~/git/dactyl_manuform/
+```
+
+## Flashing
+1. Hold BOOTSEL, plug in USB, release — `RPI-RP2` drive appears
+2. Copy the UF2:
+   ```bash
+   cp ~/git/dactyl_manuform/dactyl_manuform_custom_vial.uf2 /media/$USER/RPI-RP2/
+   ```
+3. Repeat for both halves
+4. Set EEPROM handedness (one-time per half):
+   ```bash
+   qmk flash -kb dactyl_manuform_custom -km vial -bl uf2-split-left   # left half
+   qmk flash -kb dactyl_manuform_custom -km vial -bl uf2-split-right  # right half
+   ```
+5. Always plug **left half** into USB — it is the master
 
 ## Repo layout
 ```
+dactyl_manuform_custom_vial.uf2   # Compiled flash file (ready to use)
+vial_qmk_firmware/
+  keyboards/dactyl_manuform_custom/
+    keyboard.json                 # Board config (serial driver: vendor, RP2040)
+    keymaps/vial/
+      config.h                   # EE_HANDS, Vial UID, unlock combo
+      keymap.c                   # Default keymap (reprogrammable via Vial)
+      rules.mk
+      vial.json
 pog_firmware/
-  DACTL/   # Left half KMK firmware
-  DACTR/   # Right half KMK firmware
-stls/      # 3D print files
-pictures/  # Build photos
-videos/    # Build videos
+  DACTL/                         # Old KMK left half firmware
+  DACTR/                         # Old KMK right half firmware
+stls/                            # 3D print files
+pictures/                        # Build photos
+videos/                          # Build videos
 ```
