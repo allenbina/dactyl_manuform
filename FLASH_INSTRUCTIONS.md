@@ -105,61 +105,49 @@ Edit `keyboard.json`:
 
 ## 5. Build the Firmware
 
-From inside `vial-qmk/`:
+Pre-built UF2 files are included in the repo root — you can skip this step unless you've made changes.
+
+To rebuild from source, from inside `vial-qmk/`:
 
 ```bash
-# Build for both halves (same binary is used for both)
-qmk compile -kb dactyl_manuform_custom -km vial
+# Build left-side firmware (handedness baked in)
+make dactyl_manuform_custom:vial:uf2-split-left
+cp .build/dactyl_manuform_custom_vial.uf2 ~/git/dactyl_manuform/dactyl_manuform_custom_vial_left.uf2
+
+# Build right-side firmware (handedness baked in)
+make dactyl_manuform_custom:vial:uf2-split-right
+cp .build/dactyl_manuform_custom_vial.uf2 ~/git/dactyl_manuform/dactyl_manuform_custom_vial_right.uf2
 ```
 
-On success, a `.uf2` file is generated, e.g.:
-
-```
-.build/dactyl_manuform_custom_vial.uf2
-```
+> Note: each command overwrites `.build/dactyl_manuform_custom_vial.uf2` — save the left one before building the right.
 
 ---
 
 ## 6. Flash via UF2 (BOOTSEL Method)
 
-Do this for **each half separately**.
+Two separate `.uf2` files are provided — one per half. Flash each to the correct side.
 
-1. Hold the **BOOTSEL** button on the RP2040 board.
-2. While holding BOOTSEL, plug the board into USB.
+**Left half:**
+
+1. Hold the **BOOTSEL** button on the left RP2040 board.
+2. While holding BOOTSEL, plug it into USB.
 3. Release BOOTSEL. A USB drive named `RPI-RP2` will appear.
-4. Copy the `.uf2` file onto the `RPI-RP2` drive:
+4. Copy the left UF2:
 
 ```bash
-cp .build/dactyl_manuform_custom_vial.uf2 /media/$USER/RPI-RP2/
-# The board reboots automatically once the copy is complete.
+cp dactyl_manuform_custom_vial_left.uf2 /media/$USER/RPI-RP2/
+# The board reboots automatically.
 ```
 
-Repeat for the other half.
+**Right half:**
 
----
-
-## 7. Set EEPROM Handedness (EE_HANDS)
-
-Because the firmware uses `EE_HANDS`, each half must be told whether it is
-left or right.  This is a one-time step stored in flash EEPROM.
-
-QMK ships a utility called `qmk_eeprom_reset` / the built-in `eeprom` command:
+Repeat the same steps using the right UF2:
 
 ```bash
-# Flash LEFT handedness to the left board
-qmk flash -kb dactyl_manuform_custom -km vial -bl uf2-split-left
-
-# Flash RIGHT handedness to the right board
-qmk flash -kb dactyl_manuform_custom -km vial -bl uf2-split-right
+cp dactyl_manuform_custom_vial_right.uf2 /media/$USER/RPI-RP2/
 ```
 
-> These commands enter BOOTSEL mode automatically on boards that support it,
-> or you can trigger BOOTSEL manually (hold BOOTSEL, plug in, release) and
-> then copy the `.uf2` that `qmk flash` emits.
-
-Alternatively, use the QMK Toolbox GUI which has "Set Left/Right EEPROM" buttons.
-
-After setting EEPROM, **plug the LEFT half into USB** — it becomes the master.
+> **No EEPROM step needed.** The handedness is compiled into each firmware file — there is no separate EE_HANDS flashing step. Either half can be plugged into USB.
 
 ---
 
@@ -198,8 +186,7 @@ This is the `VIAL_UNLOCK_COMBO` defined in `config.h`.
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Only left half works | Serial pin mismatch or wrong driver | Re-check Section 4 |
-| Wrong half acts as master | USB plugged into right | Always plug left into USB |
-| Keys on wrong side swapped | EE_HANDS not set | Redo Section 7 |
+| Keys on wrong side | Wrong UF2 flashed to wrong half | Re-flash with correct _left/_right UF2 |
 | Vial does not recognise keyboard | `vial.json` UID mismatch | Regenerate UID in `config.h` |
 | Build error: unknown pin | Wrong QMK/Vial version | Use latest `vial-qmk` main branch |
 
@@ -208,8 +195,8 @@ This is the `VIAL_UNLOCK_COMBO` defined in `config.h`.
 ## Quick Reference
 
 ```
-Build:   qmk compile -kb dactyl_manuform_custom -km vial
-Flash:   copy .uf2 to RPI-RP2 drive (BOOTSEL mode)
-EEPROm:  qmk flash ... -bl uf2-split-left / uf2-split-right
-Vial:    https://get.vial.today
+Flash left:   copy dactyl_manuform_custom_vial_left.uf2  → RPI-RP2 (BOOTSEL mode)
+Flash right:  copy dactyl_manuform_custom_vial_right.uf2 → RPI-RP2 (BOOTSEL mode)
+Rebuild:      make dactyl_manuform_custom:vial:uf2-split-left  (then uf2-split-right)
+Vial:         https://get.vial.today
 ```

@@ -10,7 +10,9 @@
 
 ## Current firmware
 - **Vial QMK** — compiled and ready to flash
-- Flash file: `dactyl_manuform_custom_vial.uf2` (repo root)
+- Flash files (repo root):
+  - `dactyl_manuform_custom_vial_left.uf2` — for left half (handedness baked in)
+  - `dactyl_manuform_custom_vial_right.uf2` — for right half (handedness baked in)
 - Keyboard source: `vial_qmk_firmware/keyboards/dactyl_manuform_custom/`
 - Old KMK firmware (no longer active): `pog_firmware/DACTL/` and `pog_firmware/DACTR/`
 
@@ -23,29 +25,34 @@
 ## Rebuilding firmware
 ```bash
 export PATH="$PATH:/root/.local/bin"
-export QMK_HOME=/home/mediafront/git/vial-qmk
 cd /home/mediafront/git/vial-qmk
-qmk compile -kb dactyl_manuform_custom -km vial
-cp .build/dactyl_manuform_custom_vial.uf2 ~/git/dactyl_manuform/
+
+# Build left (save before building right — both overwrite same .build output file)
+make dactyl_manuform_custom:vial:uf2-split-left
+cp .build/dactyl_manuform_custom_vial.uf2 ~/git/dactyl_manuform/dactyl_manuform_custom_vial_left.uf2
+
+# Build right
+make dactyl_manuform_custom:vial:uf2-split-right
+cp .build/dactyl_manuform_custom_vial.uf2 ~/git/dactyl_manuform/dactyl_manuform_custom_vial_right.uf2
 ```
 
 ## Flashing
 1. Hold BOOTSEL, plug in USB, release — `RPI-RP2` drive appears
-2. Copy the UF2:
+2. Copy the correct UF2 for each half:
    ```bash
-   cp ~/git/dactyl_manuform/dactyl_manuform_custom_vial.uf2 /media/$USER/RPI-RP2/
+   # Left half
+   cp ~/git/dactyl_manuform/dactyl_manuform_custom_vial_left.uf2 /media/$USER/RPI-RP2/
+   # Right half
+   cp ~/git/dactyl_manuform/dactyl_manuform_custom_vial_right.uf2 /media/$USER/RPI-RP2/
    ```
-3. Repeat for both halves
-4. Set EEPROM handedness (one-time per half):
-   ```bash
-   qmk flash -kb dactyl_manuform_custom -km vial -bl uf2-split-left   # left half
-   qmk flash -kb dactyl_manuform_custom -km vial -bl uf2-split-right  # right half
-   ```
-5. Always plug **left half** into USB — it is the master
+3. No EEPROM step needed — handedness is baked into each UF2
+4. Either half can be plugged into USB
 
 ## Repo layout
 ```
-dactyl_manuform_custom_vial.uf2   # Compiled flash file (ready to use)
+dactyl_manuform_custom_vial_left.uf2    # Flash to left half
+dactyl_manuform_custom_vial_right.uf2   # Flash to right half
+dactyl_manuform_custom_vial.uf2         # Generic (no handedness — do not use directly)
 vial_qmk_firmware/
   keyboards/dactyl_manuform_custom/
     keyboard.json                 # Board config (serial driver: vendor, RP2040)
