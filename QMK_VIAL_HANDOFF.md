@@ -29,7 +29,7 @@ Use this on your **Linux server** (toolchain + `vial-qmk` already set up). It su
 - **Right columns**: GP8, GP9, GP10, **GP11**, GP12, GP13 (single pin difference vs left)  
 - **Rows**: GP2–GP7 both sides  
 
-**Check:** `keyboard.json` has split serial `"pin": "GP1"` while `CLAUDE.md` documents GP16/GP17. Confirm what your **actually flashed** firmware uses; fix JSON/docs if needed.
+**Serial pin:** `keyboard.json` now uses `"pin": "GP17"` (vendor/PIO driver), matching the physical TX wiring. This was corrected from an earlier incorrect value of `GP1`.
 
 ---
 
@@ -132,10 +132,10 @@ Do not strip all `QK_BOOT` entries in Vial or you lose software bootloader until
 
 ## Optional next steps (priority order)
 
-1. Recompute **`keyboard.json` `LAYOUT`** `matrix` entries from **`DACTL/pog.json` `coordMap`** (and right half pattern); mirror positions in **`keymaps/vial/vial.json`**.  
-2. Confirm **`diode_direction`** against the physical photo.  
-3. Align **split UART pin** in `keyboard.json` with real wiring (GP1 vs GP16/GP17).  
-4. Rebuild UF2s, flash, test matrix in Vial; adjust remaining keymap labels for comfort.
+1. ~~Recompute **`keyboard.json` `LAYOUT`** `matrix` entries from **`DACTL/pog.json` `coordMap`**~~ — **Done.** All matrix coords recomputed from both `coordMap` files; `vial.json` updated to match. UF2s rebuilt.
+2. ~~Align **split UART pin** in `keyboard.json`~~ — **Done.** Fixed to `GP17` (vendor/PIO driver).
+3. Confirm **`diode_direction`** against the physical photo (`IMG_4705`). Repo says `ROW2COL`; verify the diode band is on the column bus, not the row bus.
+4. Flash both halves, test matrix in Vial — press each key and confirm it lights up in the correct position. Adjust keymap for comfort.
 
 ---
 

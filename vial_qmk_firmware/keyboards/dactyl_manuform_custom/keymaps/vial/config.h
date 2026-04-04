@@ -8,9 +8,9 @@
 
 // Security: require two keys to be held simultaneously before Vial can make
 // changes.  Keys are identified by (row, col) in the full 12-row matrix.
-// Here: L00 = matrix [0,0] and L10 = matrix [1,0] (Tab + Esc on left half).
-#define VIAL_UNLOCK_COMBO_ROWS {0, 1}
-#define VIAL_UNLOCK_COMBO_COLS {0, 0}
+// Tab = L00 = matrix [0,0]; Esc = L10 = matrix [0,1].
+#define VIAL_UNLOCK_COMBO_ROWS {0, 0}
+#define VIAL_UNLOCK_COMBO_COLS {0, 1}
 
 // Number of layers exposed to Vial
 #define DYNAMIC_KEYMAP_LAYER_COUNT 2

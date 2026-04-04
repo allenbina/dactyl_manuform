@@ -67,39 +67,12 @@ keyboards/dactyl_manuform_custom/
 
 ---
 
-## 4. Serial Pin Note (Important — Read Before Building)
+## 4. Serial Pin
 
-The `keyboard.json` uses **GP1 as a single-wire half-duplex serial pin**
-(`SERIAL_DRIVER = vendor`, i.e. RP2040 PIO) for simplicity.
+The `keyboard.json` is configured for **GP17** as the half-duplex serial TX pin,
+using the `vendor` driver (RP2040 PIO). This matches the physical wiring on both halves.
 
-Your hardware was wired with **GP16 (RX) / GP17 (TX) full-duplex UART**.
-
-**Option A — Use GP1 half-duplex (easier, requires re-wiring)**
-Wire a single wire between GP1 on both halves.  No changes to `keyboard.json` needed.
-
-**Option B — Use GP16/GP17 full-duplex (matches your current wiring)**
-Edit `keyboard.json`:
-
-1. Remove the `"serial"` block under `"split"`:
-   ```json
-   "serial": { "pin": "GP1" }
-   ```
-2. Add a `"usart"` block instead:
-   ```json
-   "usart": {
-       "pin": "GP16"
-   }
-   ```
-3. Add to `keymaps/vial/rules.mk`:
-   ```makefile
-   SERIAL_DRIVER = usart
-   ```
-4. Add to `keymaps/vial/config.h`:
-   ```c
-   #define SERIAL_USART_FULL_DUPLEX
-   #define SERIAL_USART_TX_PIN GP17
-   #define SERIAL_USART_RX_PIN GP16
-   ```
+No changes needed — this is already correct.
 
 ---
 
@@ -154,7 +127,7 @@ cp dactyl_manuform_custom_vial_right.uf2 /media/$USER/RPI-RP2/
 ## 8. Verify Split Communication
 
 1. Plug the left half into USB only (no right USB connection).
-2. Connect the two halves with the TRRS/TRS cable (or the serial wire on GP1).
+2. Connect the two halves with the TRRS/TRS cable (serial on GP17).
 3. Open a text editor and press keys on both halves — all keys should register.
 
 If right-half keys do not register, check:
@@ -175,7 +148,7 @@ If right-half keys do not register, check:
 ### Unlock the keyboard for editing
 
 When Vial first connects, it may ask you to hold the unlock combo:
-- **Hold Tab + Esc simultaneously** (matrix [0,0] and [1,0]) for 5 seconds.
+- **Hold Tab + Esc simultaneously** (matrix [0,0] and [0,1]) for 5 seconds.
 
 This is the `VIAL_UNLOCK_COMBO` defined in `config.h`.
 
@@ -185,7 +158,7 @@ This is the `VIAL_UNLOCK_COMBO` defined in `config.h`.
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Only left half works | Serial pin mismatch or wrong driver | Re-check Section 4 |
+| Only left half works | Serial wiring issue or wrong UF2 | Check GP17 wire between halves; re-flash |
 | Keys on wrong side | Wrong UF2 flashed to wrong half | Re-flash with correct _left/_right UF2 |
 | Vial does not recognise keyboard | `vial.json` UID mismatch | Regenerate UID in `config.h` |
 | Build error: unknown pin | Wrong QMK/Vial version | Use latest `vial-qmk` main branch |
