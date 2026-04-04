@@ -54,26 +54,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*
-     * FN — Layer 1  (all transparent; configure in Vial)
+     * FN — Layer 1
+     *
+     * Bootloader (UF2): hold MO(_FN) and tap any QK_BOOT below — reboots to RPI-RP2
+     * for flashing without BOOTSEL. Placed redundantly in case matrix/Vial mapping is off.
+     *
+     *   Left: Tab, Esc, bottom-outer thumb (Bksp), and bottom-row minus slot.
+     *   Right: top Bksp, = key (often -_/physically), bottom-inner thumb (Enter).
      */
     [_FN] = LAYOUT(
         // Left main
+        QK_BOOT, _______, _______, _______, _______, _______,
+        QK_BOOT, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, QK_BOOT,
         // Left thumb
         _______, _______, _______,
-        _______, _______, _______, _______,
+        _______, _______, _______, QK_BOOT,
 
         // Right main
+        _______, _______, _______, _______, _______, QK_BOOT,
         _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
+        QK_BOOT, _______, _______, _______, _______, _______,
         // Right thumb
         _______, _______, _______,
-        _______, _______, _______, _______
+        QK_BOOT, _______, _______, _______
     ),
 };
 // clang-format on
