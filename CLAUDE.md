@@ -20,12 +20,12 @@
 - Serial driver must be set to `vendor` (RP2040 PIO) in `keyboard.json` — bitbang does not work
 - `EE_HANDS` is defined in `keymaps/vial/config.h` — do NOT use `split.handedness.method` in `keyboard.json` (not valid in this QMK schema)
 - Build machine requires `libnewlib-arm-none-eabi` for ARM C stdlib headers
-- vial-qmk repo cloned to `/home/mediafront/git/vial-qmk`
+- vial-qmk repo cloned to `~/git/vial-qmk`
 
 ## Rebuilding firmware
 ```bash
-export PATH="$PATH:/root/.local/bin"
-cd /home/mediafront/git/vial-qmk
+export PATH="$PATH:$HOME/.local/bin"
+cd ~/git/vial-qmk
 
 # Build left (save before building right — both overwrite same .build output file)
 make dactyl_manuform_custom:vial:uf2-split-left

@@ -1,7 +1,7 @@
 {
     "manufacturer": "Custom",
     "keyboard_name": "Dactyl Manuform Custom",
-    "maintainer": "mediafront",
+    "maintainer": "allenbina",
     "usb": {
         "vid": "0xFEED",
         "pid": "0x0000",
