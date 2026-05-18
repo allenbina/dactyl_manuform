@@ -1,17 +1,23 @@
-### dactyl_manuform
-## Case
-This was my first large 3d printed project, handwired keyboard, ergo keyboard.  I had some experience in 3d printing small things, soldering, firmware and python.
+# Dactyl Manuform
 
-things I already had:
-# 3d printer.  
-ender 3 
-I got it from microcenter for $100 a couple years ago and used it here and there.  Recently I was learning fusion 360 because tinkercad was not cutting it for anything serious.  
-soldering irons
-pinecil and cheap variety
-lots of soldering accessories.
-wick, flux, wire, solder, alcohol, etc. 
-wire strippers
+My first large 3D printed project, handwired keyboard, ergo keyboard. I had some experience in 3D printing small things, soldering, firmware and python.
 
+**Controller:** Raspberry Pi Pico (RP2040), one per half  
+**Firmware:** Vial QMK (started with KMK/Pog, switched to QMK)  
+**Matrix:** 62 keys, hand-wired with 1N4148 diodes  
+**Connection:** Split via TRRS, serial UART  
+
+---
+
+## What I Already Had
+
+- **3D printer** — Ender 3, got it from Microcenter for $100 a couple years ago and used it here and there. Recently I was learning Fusion 360 because TinkerCAD was not cutting it for anything serious.
+- **Soldering irons** — Pinecil and cheap variety
+- **Accessories** — wick, flux, wire, solder, alcohol, wire strippers
+
+---
+
+## 3D Printing
 
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_3504.JPEG)
 
@@ -27,20 +33,24 @@ confirming that my code is correct
 testing prints and still have an error
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4030.JPEG)
 
-printing a calibration cauliflower
+printing a calibration cube
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4032.JPEG)
 
-found out that one of the belts was loose.  problem fixed
+found out that one of the belts was loose. problem fixed
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4045.JPEG)
 
 a collection of failed prints
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4047.JPEG)
 
-tollerances are almost perfect
+tolerances are almost perfect
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4051.JPEG)
 
 printing a 2 day print for the largest part
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4070.JPEG)
+
+---
+
+## Assembly
 
 testing fit of the switches
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4286.JPEG)
@@ -48,7 +58,7 @@ testing fit of the switches
 left side done
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4287.JPEG)
 
-testing with keycaps.  still needs to be hotglued
+testing with keycaps. still needs to be hotglued
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4288.JPEG)
 
 hotglue for stability, also added threaded inserts
@@ -59,6 +69,10 @@ two small dabs of glue for each switch
 
 playing with parts again
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4309.JPEG)
+
+---
+
+## Hand Wiring
 
 starting hand wiring
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4576.JPEG)
@@ -72,13 +86,13 @@ finished the switch wiring
 adding the chip wiring
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4580.JPEG)
 
-soldeirng the trrs
+soldering the TRRS
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4629.JPEG)
 
 first side wired, still works
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4655.JPEG)
 
-testing the fit.  it fits
+testing the fit. it fits
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4658.JPEG)
 
 repeat on the other side
@@ -87,66 +101,56 @@ repeat on the other side
 other side diodes
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4704.JPEG)
 
-other side switches completely soldered.  one is the wrong way, but i found it and fixed it
+other side switches completely soldered. one is the wrong way, but i found it and fixed it
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4705.JPEG)
 
-wire the mcu
+wire the MCU
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4706.JPEG)
+
+---
+
+## Firmware
 
 first attempt at firmware
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4710.JPEG)
 
-somewhat of a success with firmware.  this will take a long time
+somewhat of a success with firmware. this will take a long time
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4971.JPEG)
 
-one week later, successful firmware, but missing features 
+one week later, successful firmware, but missing features
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4989.JPEG)
 
-plaing with settings
+playing with settings
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4990.JPEG)
 
-mostly finished product 
+mostly finished product
 ![](https://github.com/allenbina/dactyl_manuform/blob/main/pictures/IMG_4993.JPEG)
 
+Started with KMK (Python-based, via Pog), eventually moved to Vial QMK for better features and keymap GUI support.
 
+---
 
+## Parts
 
-# octprint
+Ordered from AliExpress:
 
-picking a layout.  
-things I would have done different
+- Black Pi Pico with USB-C (x2)
+- 1N4148 diodes (100 pack)
+- Keycaps
+- TRRS connectors + cable
+- Rainbow ribbon cable
+- Assorted M3 screws
+- M3 heat set inserts
+- Silicone rubber bumps
+- Wrist rests
 
-3d printed case
+Case generated with [Cosmos](https://ryanis.cool/cosmos/).
 
-https://ryanis.cool/cosmos/
+---
 
-ordered parts from ali express
+## What I'd Do Differently
 
-wrist rests
-rainbow ribbon cable
-assorted m3 screws
-m3 heat set inserts
-
-black pi pico with usb c
-1n4148 diodes (100 pack)
-keycaps
-trrs connectors
-trrs cable
-silicon rubber bump
-
-
-options for chips.
-
-hand wiring
-
-kepcaps
-
-second thoughts about sizing.  
-
-firmware
-qmk, 
-kmk,
-pog.
-
-ee_handedness
-
+- Pick a layout generator earlier — spent too much time on manual Fusion 360 work
+- Use ribbon cable from the start instead of individual wires
+- Test firmware before wiring the second half
+- Start with QMK instead of KMK — the tooling and community support are much better
